@@ -1,0 +1,473 @@
+.app {
+  min-height: 100vh;
+  background: #f5f6f8;
+}
+
+.header {
+  background: white;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.board-container {
+  padding: 30px 40px;
+}
+
+.board-container h2 {
+  margin-bottom: 25px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.column {
+  background: #e9ebef;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 400px;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.column-header h3 {
+  margin: 0;
+}
+
+.task-count {
+  background: white;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.task-card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.task-card h4 {
+  margin: 0 0 8px;
+}
+
+.task-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.priority {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.priority.high {
+  background: #ffe0e0;
+}
+
+.priority.medium {
+  background: #fff0c2;
+}
+
+.priority.low {
+  background: #dff5e3;
+}
+
+.empty {
+  color: #777;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.status {
+  padding: 40px;
+}
+
+.error {
+  padding: 40px;
+  color: red;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-button {
+  border: none;
+  background: #222;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.create-button:hover {
+  opacity: 0.85;
+}
+
+.form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+
+.form-container h2 {
+  margin: 0;
+}
+
+.form-container label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-button,
+.cancel-button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-button {
+  background: #222;
+  color: white;
+}
+
+.save-button:hover {
+  opacity: 0.85;
+}
+
+.cancel-button {
+  background: #ddd;
+}
+.task-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.edit-button,
+.delete-button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.edit-button {
+  background: #e8e8e8;
+}
+
+.delete-button {
+  background: #ffe0e0;
+  color: #b00020;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  opacity: 0.8;
+}
+.task-card {
+  cursor: grab;
+}
+
+.task-card:active {
+  cursor: grabbing;
+}
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-container label {
+  font-weight: bold;
+}
+
+.filter-container select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+
+/* ==========================
+   Responsive Board
+========================== */
+
+@media (max-width: 1000px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: 250px;
+  }
+}
+
+
+/* ==========================
+   Mobile Layout
+========================== */
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .board-container {
+    padding: 20px;
+  }
+
+  .create-button {
+    width: 100%;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-container select {
+    width: 100%;
+  }
+
+  .form-container {
+    padding: 18px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .save-button,
+  .cancel-button {
+    width: 100%;
+  }
+}
+.task-card {
+  transition: transform 0.15s ease,
+              box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+/* ==========================
+   Better Empty State
+========================== */
+
+.empty-state {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #777;
+}
+
+.empty-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.empty-state p {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #555;
+}
+
+.empty-state span {
+  font-size: 13px;
+  color: #999;
+}
+
+
+/* ==========================
+   Loading State
+========================== */
+
+.status-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.status-container p {
+  color: #777;
+}
+
+
+/* ==========================
+   Error State
+========================== */
+
+.error-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.error-container h2 {
+  margin-bottom: 10px;
+}
+
+.error-container .error {
+  margin-bottom: 20px;
+}
+
+
+/* ==========================
+   Task Card Hover
+========================== */
+
+.task-card {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==========================
+   Responsive Board
+========================== */
+
+@media (max-width: 1000px) {
+
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: 250px;
+  }
+
+}
+
+
+/* ==========================
+   Mobile Layout
+========================== */
+
+@media (max-width: 600px) {
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .board-container {
+    padding: 20px;
+  }
+
+  .create-button {
+    width: 100%;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-container select {
+    width: 100%;
+  }
+
+  .form-container {
+    padding: 18px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .save-button,
+  .cancel-button {
+    width: 100%;
+  }
+
+}
